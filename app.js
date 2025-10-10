@@ -6,6 +6,8 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
+app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'));
+
 const conexao = mysql.createConnection({
     host: 'localhost',
     user: 'root',
