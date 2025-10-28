@@ -1,0 +1,42 @@
+
+<h2>Agendamento de Consultas</h2>
+
+<form action="/agendamento" method="POST">
+
+  <!-- Selecionar Paciente -->
+    <label for="id_paciente">Paciente:</label>
+  <select name="id_paciente" required>
+    <option value="">Selecione o paciente</option>
+    {{#each pacientes}}
+      <option value="{{id_paciente}}">{{id_paciente}} - {{nome_paciente}}</option>
+    {{/each}}
+  </select>
+
+  <!-- Selecionar Psicólogo -->
+  <label for="id_psicologo">Psicólogo:</label>
+  <select name="id_psicologo" required>
+    <option value="">Selecione o psicólogo</option>
+    {{#each psicologos}}
+      <option value="{{id_psicologo}}">{{id_psicologo}} - {{nome_psicologo}}</option>
+    {{/each}}
+  </select>
+
+    <!-- Selecionar a data da consulta -->
+    <label for="data_agendamento">Data da Consulta:</label>
+    <input type="date" name="data_agendamento" value="" required>
+
+    <!-- Selecionar o tipo da consulta -->
+    <label for="tipo">Escolha o tipo:</label>
+    <select id="tipo" name="tipo">
+        <option value="selecionar">Selecione uma opção</option>
+        <option value="online">Online</option>
+        <option value="presencial">Presencial</option>
+    </select>
+
+    <!-- Selecionar o horário -->
+    <label for="horario">Horário:</label>
+    <input type="time" name="horario" value="" required>    
+
+    <button type="submit">Agendar Consulta</button>     
+</form>
+
